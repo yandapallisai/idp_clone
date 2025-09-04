@@ -1,0 +1,295 @@
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.top-header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 22px 1rem;
+  z-index: 50;
+  position: relative;
+  background-color:#383434;
+}
+/* Hide top header on small screens */
+@media (max-width: 767px) {
+  .top-header { display: none; }
+}
+
+.top-header-content {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  font-size: 0.875rem;
+  color: white;
+  padding: 0 1rem;
+}
+
+
+.top-header-content a, .top-header-content span {
+  color: white;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.top-header-content a:hover, .top-header-content span:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  transition: transform 0.2s ease-in-out;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.375rem;
+  z-index: 10;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.2s ease-in-out;
+}
+
+.dropdown.open .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    text-decoration: none;        }
+
+.dropdown-content a {
+    display: block;
+    padding: 1rem 1rem;
+    color: #4B5563;
+    text-decoration: none;
+}
+
+.top-header-content .dropdown-content a:hover {
+    background-color: #587bc1;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.counselling-btn {
+  background-color: #436f54;
+  color: white;
+  padding: 1rem 1.5rem 1rem ;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 0.9rem;
+  border: none;
+}
+
+.counselling-btn:hover {
+  background-color: #15592f;
+}
+
+.signin-btn {
+  color: #144988;
+  border: 1px solid #144988;
+  padding: 0.7rem 1.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 0.875rem;
+  background-color: transparent;
+}
+
+.signin-btn:hover {
+  background-color: blue;
+  color: white;
+}
+
+.favorite-icon {
+  color: #EF4444;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.favorite-icon:hover {
+  color: #EF4444;
+}
+
+.favorite-svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .top-header-content {
+    font-size: 1rem;
+  }
+  .counselling-btn, .signin-btn {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .top-header-content > a, .top-header-content > div {
+    display: flex;
+  }
+}
+.second-header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.second-header-content {
+    display: flex;
+    /* This is the key line: it pushes the children to opposite ends */
+     justify-content: space-between;
+     /* Centers items vertically */
+      align-items: center;
+      gap: 1.5rem;
+      /* Control the max width of the content and center it on the page */
+    padding-right: 3rem;
+    padding-left: 1rem;
+    
+  
+}
+.dropdown-content a:hover{
+  
+  background-color: #e6e8ed;
+}
+.nav-links-and-logo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  
+  color: #4B5563;
+}
+
+.nav-links-and-logo a {
+  color: #383434;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+
+
+/* Styling for the main container */
+.logo-section {
+/* Optional: Use flexbox to align content if there are other elements */
+display: flex;
+align-items: center; /* Vertically centers the logo */
+padding: 10px 0; /* Adds some spacing above and below */
+/* Add any other container styles like background, border, etc. */
+}
+
+/* Styling for the SVG/Image container */
+.logo-svg-container {
+/* This can be used to set a specific size for the logo wrapper, 
+which helps with consistent spacing. */
+display: flex; /* Helps in centering the image inside */
+align-items: center;
+justify-content: center;
+/* You could set a specific width/height here if needed. */
+}
+
+/* Styling for the actual image element */
+.logo-svg-container img {
+/* Set the dimensions of the logo. This is crucial. */
+height: 75px; /* Example: Sets a fixed height */
+width: auto; /* Maintains the aspect ratio */
+
+/* Or, if you want a fixed width and controlled height: */
+/* width: 150px; */
+/* height: auto; */
+
+/* Or, to prevent the image from becoming too large: */
+/* max-width: 100%; */
+/* max-height: 100px; */
+
+/* Prevents any default border or spacing on the image */
+border: none;
+display: block; /* Removes any extra space below the image */
+}
+.action-buttons {
+  display: none;
+  align-items:center;
+  gap: 1rem;
+  
+}
+.action-buttons .signin-btn{
+  font-size: 1.3rem;
+}
+ .action-buttons .counselling-btn{
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .nav-links-and-logo {
+    font-size: 1rem;
+  }
+  .action-buttons {
+    display: flex;
+  }
+}
+
+/* Mobile menu */
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.mobile-menu a {
+  color: #383434;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.mobile-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Small screens: show hamburger, stack and hide desktop nav links */
+@media (max-width: 767px) {
+  .second-header-content {
+    padding-right: 1rem;
+  }
+  .nav-links-and-logo > .dropdown,
+  .nav-links-and-logo a { display: none; }
+  .action-buttons { display: none; }
+  .mobile-toggle { display: inline-flex; }
+  .mobile-menu.open { display: flex; }
+}
+
